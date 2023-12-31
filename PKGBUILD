@@ -1,11 +1,11 @@
 # Maintainer: 7Ji <pugokughin@gmail.com>
 
 _desc="flippy's AArch64-focused fork aiming to increase usability"
-_pkgver_main=6.1.59
+_pkgver_main=6.1.69
 _pkgver_suffix=flippy
 _pkgver_uname="${_pkgver_main}-${_pkgver_suffix}"
 _flippy_repo='linux-6.1.y'
-_flippy_commit='e71978b8105e40e6f9db9aecf1c89546874ad150'
+_flippy_commit='1f0fdc97ea762bdf0d0ac8d1df0e79d73db94712'
 _srcname="${_flippy_repo}-${_flippy_commit}"
 
 pkgbase=linux-aarch64-flippy
@@ -31,8 +31,8 @@ source=(
   'linux.preset'
 )
 sha256sums=(
-  '1c2fd2977c2764adf2cdb6f323b24f9b7ead4c007351f5f3ef47d6dc2f965e57'
-  'fec686b999bc6924248da94b205755031df799030e09c48e26ce34f243aeb211'
+  'e7eebd8d97b72574a79d7af821405cb7b6d4c502b3985b36fa60a326adf55e0c'
+  '19ab2f0c461498e67dd57ea30fe490d9e33ebbf8865995c7b7dfb0a965e2d10b'
   'bdcd6cbf19284b60fac6d6772f1e0ec2e2fe03ce7fe3d7d16844dd6d2b5711f3'
 )
 
@@ -81,6 +81,15 @@ package_linux-aarch64-flippy() {
     "${pkgbase}-dtb-allwinner: dtbs for Allwinner SoCs"
     "${pkgbase}-dtb-amlogic: dtbs for Amlogic SoCs"
     "${pkgbase}-dtb-rockchip: dtbs for Rockchip SoCs"
+  )
+  provides=(
+    KSMBD-MODULE
+    VIRTUALBOX-GUEST-MODULES
+    WIREGUARD-MODULE
+  )
+  replaces=(
+    virtualbox-guest-modules-arch
+    wireguard-arch
   )
   backup=(
     "etc/mkinitcpio.d/${pkgbase}.preset"

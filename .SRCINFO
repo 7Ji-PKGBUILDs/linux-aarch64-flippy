@@ -1,5 +1,5 @@
 pkgbase = linux-aarch64-flippy
-	pkgver = 6.1.59
+	pkgver = 6.1.69
 	pkgrel = 1
 	url = https://github.com/unifreq/linux-6.1.y
 	arch = aarch64
@@ -9,11 +9,11 @@ pkgbase = linux-aarch64-flippy
 	makedepends = dtc
 	makedepends = uboot-tools
 	options = !strip
-	source = linux-6.1.y-e71978b8105e40e6f9db9aecf1c89546874ad150.tar.gz::https://github.com/unifreq/linux-6.1.y/archive/e71978b8105e40e6f9db9aecf1c89546874ad150.tar.gz
+	source = linux-6.1.y-1f0fdc97ea762bdf0d0ac8d1df0e79d73db94712.tar.gz::https://github.com/unifreq/linux-6.1.y/archive/1f0fdc97ea762bdf0d0ac8d1df0e79d73db94712.tar.gz
 	source = config
 	source = linux.preset
-	sha256sums = 1c2fd2977c2764adf2cdb6f323b24f9b7ead4c007351f5f3ef47d6dc2f965e57
-	sha256sums = fec686b999bc6924248da94b205755031df799030e09c48e26ce34f243aeb211
+	sha256sums = e7eebd8d97b72574a79d7af821405cb7b6d4c502b3985b36fa60a326adf55e0c
+	sha256sums = 19ab2f0c461498e67dd57ea30fe490d9e33ebbf8865995c7b7dfb0a965e2d10b
 	sha256sums = bdcd6cbf19284b60fac6d6772f1e0ec2e2fe03ce7fe3d7d16844dd6d2b5711f3
 
 pkgname = linux-aarch64-flippy
@@ -29,6 +29,11 @@ pkgname = linux-aarch64-flippy
 	optdepends = linux-aarch64-flippy-dtb-allwinner: dtbs for Allwinner SoCs
 	optdepends = linux-aarch64-flippy-dtb-amlogic: dtbs for Amlogic SoCs
 	optdepends = linux-aarch64-flippy-dtb-rockchip: dtbs for Rockchip SoCs
+	provides = KSMBD-MODULE
+	provides = VIRTUALBOX-GUEST-MODULES
+	provides = WIREGUARD-MODULE
+	replaces = virtualbox-guest-modules-arch
+	replaces = wireguard-arch
 	backup = etc/mkinitcpio.d/linux-aarch64-flippy.preset
 
 pkgname = linux-aarch64-flippy-headers
@@ -36,12 +41,12 @@ pkgname = linux-aarch64-flippy-headers
 
 pkgname = linux-aarch64-flippy-dtb-allwinner
 	pkgdesc = DTB files for Allwinner SoCs for flippy's AArch64 kernel
-	provides = linux-aarch64-flippy-dtb=6.1.59
+	provides = linux-aarch64-flippy-dtb=6.1.69
 
 pkgname = linux-aarch64-flippy-dtb-amlogic
 	pkgdesc = DTB files for Amlogic SoCs for flippy's AArch64 kernel
-	provides = linux-aarch64-flippy-dtb=6.1.59
+	provides = linux-aarch64-flippy-dtb=6.1.69
 
 pkgname = linux-aarch64-flippy-dtb-rockchip
 	pkgdesc = DTB files for Rockchip SoCs for flippy's AArch64 kernel
-	provides = linux-aarch64-flippy-dtb=6.1.59
+	provides = linux-aarch64-flippy-dtb=6.1.69
